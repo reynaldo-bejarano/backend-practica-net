@@ -20,15 +20,15 @@ var Connection = Environment.GetEnvironmentVariable("CONNECTION_STRING");
 
 // Add services to the container.
 
-// Agregar servicios al contenedor.
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowSpecificOrigin",
-        builder => builder.WithOrigins("http://localhost:5174") // Reemplaza con tu URL frontend
-                          .AllowAnyMethod()
-                          .AllowAnyHeader()
-                          .AllowCredentials());
-});
+//// Agregar servicios al contenedor.
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("AllowSpecificOrigin",
+//        builder => builder.WithOrigins("http://localhost:5174") // Reemplaza con tu URL frontend
+//                          .AllowAnyMethod()
+//                          .AllowAnyHeader()
+//                          .AllowCredentials());
+//});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -101,11 +101,11 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-// Configurar el middleware HTTP.
-if (app.Environment.IsDevelopment())
-{
-    app.UseDeveloperExceptionPage();
-}
+//// Configurar el middleware HTTP.
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseDeveloperExceptionPage();
+//}
 
 // Aplica la política de CORS
 app.UseCors("AllowSpecificOrigin");
